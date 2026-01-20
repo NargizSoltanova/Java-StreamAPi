@@ -1,5 +1,6 @@
 import entities.Employee;
 
+import java.awt.print.Book;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -137,5 +138,79 @@ public class Main {
         Boolean anyEven =  numbers7.stream().anyMatch(x -> x % 2 == 0);
         System.out.println(anyEven);
 
+        //Task 21
+        List<Integer> numbers8 = List.of(1,2,3, -1);
+        Boolean checkAllPositive = numbers8.stream().allMatch(x -> x > 0);
+        System.out.println(checkAllPositive);
+
+        //Task 22
+        List<Integer> numbers9 = List.of(1,2,3);
+        Boolean checkNoIsNegative = numbers9.stream().noneMatch(x -> x < 0);
+        System.out.println(checkNoIsNegative);
+
+        //Task 23
+        List<String> names3 = List.of("Banana","Apple","Mango");
+        var sortedList3 = names3.stream().sorted().toList();
+        System.out.println(sortedList3);
+
+        //Task 24
+        List<Integer> numbers10 = List.of(4,1,7,2);
+        var sortedList10 = numbers10.stream().sorted(Comparator.reverseOrder()).toList();
+        System.out.println(sortedList10);
+
+        //Task 25
+        List<Integer> numbers11 = List.of(9,3,6);
+        var min =  numbers11.stream().min(Integer::compareTo).orElse(0);
+        System.out.println(min);
+
+        //Task 26
+        List<String> names4 = List.of("Java","Python","C++");
+        var first = names4.stream().findFirst().orElse(null);
+        System.out.println(first);
+
+        //Task 27
+        List<Integer> numbers12 = List.of(1,2,3,4,5);
+        var skip2element =  numbers12.stream().skip(2).toList();
+        System.out.println(skip2element);
+
+        //Task 28
+        List<Integer> numbers13 = List.of(10,20,30,40,50);
+        var limit3element =  numbers13.stream().limit(3).toList();
+        System.out.println(limit3element);
+
+        //Task 29
+        List<Integer> numbers14 = List.of(1,2,2,3,3,4);
+        var removeDuplicates = numbers14.stream().distinct().toList();
+        System.out.println(removeDuplicates);
+
+        //Task 30
+        List<Integer> numbers15 = List.of(1,2,3);
+        var convertToStringList = numbers15.stream().map(Object::toString).toList();
+        System.out.println(convertToStringList);
+
+        //Task 31
+        List<String> words2 = List.of("A","B","C");
+        String comma = words2.stream().collect(Collectors.joining(","));
+        System.out.println(comma);
+
+        //Task 32
+        List<Integer> numbers16 = List.of(1,2,3,4);
+        var sum = numbers16.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sum);
+
+        //Task 33
+        List<String> items = List.of("pen","pencil","eraser");
+        var count = items.stream().count();
+        System.out.println(count);
+
+        //Task 34
+        List<String> list2 = List.of();
+        var checkIsEmpty = list2.stream().allMatch(x -> x.isEmpty());
+        System.out.println(checkIsEmpty);
+
+        //Task 35
+        List<String> names5 = List.of("A","B","A");
+        var convertToSet = names5.stream().collect(Collectors.toSet());
+        System.out.println(convertToSet);
     }
 }
